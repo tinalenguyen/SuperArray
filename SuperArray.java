@@ -43,7 +43,7 @@ public class SuperArray {
 
   private void resize(){
 //increase the capacity: create a larger array, copy values from the original array to new one, assign new one to instance variable
-    String[] newArray = new String[size + 10]
+    String[] newArray = new String[size + 10];
       for (int i = 0; i < data.length; i++){
           newArray[i] = data[i];
           }
