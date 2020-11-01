@@ -17,7 +17,8 @@ public class SuperArray {
 
   public boolean add(String element){
 //appends the specified element to the end of this list
-
+//modified (when capacity is full, resize before adding)
+    if (size == data.length) resize();
     data[size] = element;
     size++;
     return true;
@@ -33,25 +34,23 @@ public class SuperArray {
 
   public String set(int index, String element){
 //replaces the element at the specified position in this list with the specified element, return the value you replaced
-
+    String before = "";
+    before = data[index];
     data[index] = element;
-    return element;
+    return before;
 
   }
 
   private void resize(){
 //increase the capacity: create a larger array, copy values from the original array to new one, assign new one to instance variable
-
-
-  }
-
-  public boolean add(String element){
-//appends the specified element to the end of this list
     String[] newArray = new String[size + 10]
-    for (int i = 0; i < data.length; i++){
-      newArray[i] = data[i];
-    }
-    newArray = data;
+      for (int i = 0; i < data.length; i++){
+          newArray[i] = data[i];
+          }
+          newArray = data;
+
   }
+
+
 
 }
