@@ -47,7 +47,7 @@ public class SuperArray {
       for (int i = 0; i < data.length; i++){
           newArray[i] = data[i];
           }
-          newArray = data;
+          data = newArray;
 
   }
 
