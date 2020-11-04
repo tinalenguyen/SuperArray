@@ -117,7 +117,7 @@ public class SuperArray {
 //shifts element currently at position and subsequent elements to the left
 
     String original = data[index];
-    for (int i = 0 ; i < size -1; i++){
+    for (int i = index ; i < size -1; i++){
       data[i] = data[i+1];
 
     }
@@ -125,4 +125,14 @@ public class SuperArray {
     return original;
   }
 
+  public int indexOf(String s){
+//returns index of first occurence of specified elements
+//returns -1 if list doesn't contain specified element
+
+    for (int i = 0; i< size ; i++){
+      if (data[i].equals(s)) return i;
+
+    }
+    return -1;
+  }
 }
