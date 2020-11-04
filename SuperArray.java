@@ -8,6 +8,13 @@ public class SuperArray {
     size = 0;
   }
 
+  public SuperArray(int initialCapacity){
+//create the SuperArray with the provided startnig initialCapacity
+    data = new String[initialCapacity];
+    size = 0;
+
+  }
+
   public int size() {
 //returns the number of elements in this list
 
@@ -50,6 +57,36 @@ public class SuperArray {
           data = newArray;
 
   }
+
+
+  public void clear(){
+//reset SuperArray to be size 0
+
+
+  }
+  public boolean isEmpty(){
+//returns true if this list contains no elements
+
+    if (size == 0) return true;
+    else return false;
+
+  }
+
+  public String toString() {
+//displays elements that were added, not the empty spots
+
+//    System.out.println()
+
+
+  }
+
+  public boolean contains(String s){
+//returns true if this list contains the specified element
+
+
+
+  }
+
 
 
 
