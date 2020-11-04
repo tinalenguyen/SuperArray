@@ -96,14 +96,22 @@ public class SuperArray {
     for (int i = 0; i < size ; i++){
       if (data[i].equals(s)) {
         return true;
-      }
+      }}
       return false;
-    }
-
 
   }
 
+  public void add(int index, String element){
+//inserts specified element at the specified position in this list
+//shift element currently at position and subsequent elements to the right
 
+    for (int i = size; i >= index ; i--){
+      data[i+1] = data[i];
+    }
+    data[index] = element;
+    size++;
+
+  }
 
 
 }
