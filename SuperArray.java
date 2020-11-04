@@ -135,4 +135,17 @@ public class SuperArray {
     }
     return -1;
   }
+
+  public String[] toArray(){
+//returns an array containing all of elements in this list in proper sequence
+//this method must allocate a new toArray
+
+    String[] allElements = new String[size];
+
+    for (int i = 0; i < size; i++){
+        allElements[i] = data[i];
+
+    }
+    return allElements;
+  }
 }
