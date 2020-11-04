@@ -50,7 +50,7 @@ public class SuperArray {
 
   private void resize(){
 //increase the capacity: create a larger array, copy values from the original array to new one, assign new one to instance variable
-    String[] newArray = new String[size + 10];
+    String[] newArray = new String[2 * size];
       for (int i = 0; i < data.length; i++){
           newArray[i] = data[i];
           }
@@ -61,7 +61,8 @@ public class SuperArray {
 
   public void clear(){
 //reset SuperArray to be size 0
-
+    data = new String[10];
+    size = 0;
 
   }
   public boolean isEmpty(){
@@ -83,6 +84,12 @@ public class SuperArray {
   public boolean contains(String s){
 //returns true if this list contains the specified element
 
+    for (int i = 0; i < data.length ; i++){
+      if (data[i].equals(s)) {
+        return true;
+      }
+      return false;
+    }
 
 
   }
