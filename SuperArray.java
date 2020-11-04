@@ -76,15 +76,24 @@ public class SuperArray {
   public String toString() {
 //displays elements that were added, not the empty spots
 
-//    System.out.println()
+    if (size == 0){
+      return "[]";
+    }
 
+    String finalString = "[";
 
+    for (int i = 0; i < size -1; i++){
+      finalString += data[i] + ", ";
+    }
+
+    finalString += data[size-1] + "]";
+    return finalString;
   }
 
   public boolean contains(String s){
 //returns true if this list contains the specified element
 
-    for (int i = 0; i < data.length ; i++){
+    for (int i = 0; i < size ; i++){
       if (data[i].equals(s)) {
         return true;
       }
