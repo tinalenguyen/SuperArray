@@ -110,8 +110,19 @@ public class SuperArray {
     }
     data[index] = element;
     size++;
-
   }
 
+  public String remove(int index){
+//removes element at specified position in list
+//shifts element currently at position and subsequent elements to the left
+
+    String original = data[index];
+    for (int i = 0 ; i < size -1; i++){
+      data[i] = data[i+1];
+
+    }
+    size--;
+    return original;
+  }
 
 }
