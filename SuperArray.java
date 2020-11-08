@@ -186,7 +186,25 @@ for (int i = size - 1; i< size ; i--){
 }
 return -1;
 
+  }
+
+  public boolean equals(SuperArray other){
+//superarrays are equal when all corresponding elements are equal
+    if (size != other.size){
+      return false;
+    }
+    boolean equaling = false;
+  for (int i = 0 ; i < other.size ; i++){
+
+    if (data[i].equals(other.data[i])){
+      equaling = true;
+    }
 
   }
+    return equaling;
+
+  }
+
+
 
 }
