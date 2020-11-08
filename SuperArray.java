@@ -148,4 +148,41 @@ public class SuperArray {
     }
     return allElements;
   }
+
+  public static void removeDuplicates(SuperArray s){
+//all elements with the same value but higher index will be removed
+//keep first occurence of each value
+
+    for (int i = 0; i < s.size();){
+      if (s.indexOf(s.get(i)) != i){
+        s.remove(i);
+      }
+      else i++;
+    }
+  }
+
+  public static SuperArray findOverlap(SuperArray a, SuperArray b){
+//return a new SuperArray that is the intersection of elements of a and b
+//the order should be the same as the order of the elements of a
+
+      SuperArray finalArray = new SuperArray();
+      for (int i = 0 ; i < a.size(); i++){
+        if (b.indexOf(a.get(i)) > -1) {
+          finalArray.add(a.get(i));
+        }
+
+      }
+      removeDuplicates(finalArray);
+      return finalArray;
+  }
+
+  public int lastIndexOf(String value){
+//returns last occurence of specified value
+//returns -1 if value doesn't exist in the array
+
+return -1;
+
+
+  }
+
 }
