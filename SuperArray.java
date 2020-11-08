@@ -180,7 +180,7 @@ public class SuperArray {
 //returns last occurence of specified value
 //returns -1 if value doesn't exist in the array
 
-for (int i = size - 1; i< size ; i--){
+  for (int i = (size - 1); i >= 0  ; i--) {
   if (data[i].equals(value)) return i;
 
 }
@@ -190,42 +190,37 @@ return -1;
 
   public boolean equals(SuperArray other){
 //superarrays are equal when all corresponding elements are equal
-    if (size != other.size){
-      return false;
+
+    if (size == other.size){
+      for (int i = 0; i < size; i++){
+        if (!(data[i].equals(other.data[i]))) {
+          return false;
+      }}
+      return true;
     }
-    boolean equaling = false;
-  for (int i = 0 ; i < other.size ; i++){
-
-    if (data[i].equals(other.data[i])){
-      equaling = true;
-    }
-
-  }
-    return equaling;
-
+    return false;
   }
 
   public static SuperArray zip(SuperArray a, SuperArray b){
 //return a new superarray that contains all elements of a and elements of b
 // in following sequence: [a0,b0,a1,b1,a2,b2]
 
-    SuperArray finalArray = new SuperArray(a.size + b.size);
+    SuperArray finalArray = new SuperArray(a.size() + b.size());
 
-    for (int i = 0; i < b.size && i < a.size ; i++){
+    int i = 0;
+    for ( ; i < b.size() && i < a.size() ; i++){
       finalArray.add(a.get(i));
       finalArray.add(b.get(i));
 
     }
 
-    for (int i = 0; i < b.size || i < a.size; i++){
-      if (i < a.size){
+    for (; i < b.size() || i < a.size(); i++){
+      if (i < a.size()){
         finalArray.add(a.get(i));
       }
         else finalArray.add(b.get(i));
 }
       return finalArray;
-
-
 
   }
 
