@@ -205,6 +205,28 @@ return -1;
 
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+//return a new superarray that contains all elements of a and elements of b
+// in following sequence: [a0,b0,a1,b1,a2,b2]
 
+    SuperArray finalArray = new SuperArray(a.size + b.size);
+
+    for (int i = 0; i < b.size && i < a.size ; i++){
+      finalArray.add(a.get(i));
+      finalArray.add(b.get(i));
+
+    }
+
+    for (int i = 0; i < b.size || i < a.size; i++){
+      if (i < a.size){
+        finalArray.add(a.get(i));
+      }
+        else finalArray.add(b.get(i));
+}
+      return finalArray;
+
+
+
+  }
 
 }
