@@ -180,6 +180,10 @@ public class SuperArray {
 //returns last occurence of specified value
 //returns -1 if value doesn't exist in the array
 
+for (int i = size - 1; i< size ; i--){
+  if (data[i].equals(value)) return i;
+
+}
 return -1;
 
 
