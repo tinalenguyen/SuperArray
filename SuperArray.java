@@ -163,32 +163,8 @@ public class SuperArray {
     return allElements;
   }
 
-  public static void removeDuplicates(SuperArray s){
-//all elements with the same value but higher index will be removed
-//keep first occurence of each value
 
-    for (int i = 0; i < s.size();){
-      if (s.indexOf(s.get(i)) != i){
-        s.remove(i);
-      }
-      else i++;
-    }
-  }
 
-  public static SuperArray findOverlap(SuperArray a, SuperArray b){
-//return a new SuperArray that is the intersection of elements of a and b
-//the order should be the same as the order of the elements of a
-
-      SuperArray finalArray = new SuperArray();
-      for (int i = 0 ; i < a.size(); i++){
-        if (b.indexOf(a.get(i)) > -1) {
-          finalArray.add(a.get(i));
-        }
-
-      }
-      removeDuplicates(finalArray);
-      return finalArray;
-  }
 
   public int lastIndexOf(String value){
 //returns last occurence of specified value
@@ -215,28 +191,7 @@ return -1;
     return false;
   }
 
-  public static SuperArray zip(SuperArray a, SuperArray b){
-//return a new superarray that contains all elements of a and elements of b
-// in following sequence: [a0,b0,a1,b1,a2,b2]
 
-    SuperArray finalArray = new SuperArray(a.size() + b.size());
-
-    int i = 0;
-    for ( ; i < b.size() && i < a.size() ; i++){
-      finalArray.add(a.get(i));
-      finalArray.add(b.get(i));
-
-    }
-
-    for (; i < b.size() || i < a.size(); i++){
-      if (i < a.size()){
-        finalArray.add(a.get(i));
-      }
-        else finalArray.add(b.get(i));
-}
-      return finalArray;
-
-  }
 
 
 
