@@ -10,6 +10,9 @@ public class SuperArray {
 
   public SuperArray(int initialCapacity){
 //create the SuperArray with the provided startnig initialCapacity
+    if (initialCapacity < 0){
+      throw new IllegalArgumentException("Value " + initialCapacity + " cannot be negative for initial capacity");
+    }
     data = new String[initialCapacity];
     size = 0;
 
@@ -34,13 +37,19 @@ public class SuperArray {
 
   public String get(int index){
 //returns the elemt at the specified position in this list
-
+    if (index >= size || index < 0){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
+    }
     return data[index];
 
   }
 
   public String set(int index, String element){
 //replaces the element at the specified position in this list with the specified element, return the value you replaced
+  if (index >= size || index < 0){
+  throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
+  }
+
     String before = "";
     before = data[index];
     data[index] = element;
@@ -223,5 +232,7 @@ return -1;
       return finalArray;
 
   }
+
+
 
 }
