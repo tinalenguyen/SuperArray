@@ -27,7 +27,7 @@ public class SuperArray {
 
   public boolean add(String element){
 //appends the specified element to the end of this list
-//modified (when capacity is full, resize before adding)
+//modified (when capacity is full, resize before adding
     if (size == data.length) resize();
     data[size] = element;
     size++;
@@ -37,7 +37,7 @@ public class SuperArray {
 
   public String get(int index){
 //returns the elemt at the specified position in this list
-    if (index >= size || index < 0){
+    if (index >= size() || index < 0){
       throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
     }
     return data[index];
@@ -46,7 +46,7 @@ public class SuperArray {
 
   public String set(int index, String element){
 //replaces the element at the specified position in this list with the specified element, return the value you replaced
-  if (index >= size || index < 0){
+  if (index >= size() || index < 0){
   throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
   }
 
@@ -113,7 +113,9 @@ public class SuperArray {
   public void add(int index, String element){
 //inserts specified element at the specified position in this list
 //shift element currently at position and subsequent elements to the right
-
+    if (index < 0 || index > size()){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
+    }
     for (int i = size; i >= index ; i--){
       data[i+1] = data[i];
     }
