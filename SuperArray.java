@@ -126,6 +126,9 @@ public class SuperArray {
   public String remove(int index){
 //removes element at specified position in list
 //shifts element currently at position and subsequent elements to the left
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " +index + " is out of bounds");
+    }
 
     String original = data[index];
     for (int i = index ; i < size -1; i++){
