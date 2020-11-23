@@ -116,11 +116,15 @@ public class SuperArray {
     if (index < 0 || index > size()){
       throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
     }
+    if (size >= data.length) resize();
     for (int i = size; i >= index ; i--){
-      data[i+1] = data[i];
+      if (i == index) {
+        data[index] = element;
+        size++;
+      }
+      else data[i] = data[i-1];
     }
-    data[index] = element;
-    size++;
+
   }
 
   public String remove(int index){
@@ -163,6 +167,17 @@ public class SuperArray {
     return allElements;
   }
 
+  public static void removeDuplicates(SuperArray s){
+//all elements with the same value but higher index will be removed
+//keep first occurence of each value
+
+    for (int i = 0; i < s.size();){
+      if (s.indexOf(s.get(i)) != i){
+        s.remove(i);
+      }
+      else i++;
+    }
+  }
 
 
 
